@@ -1,4 +1,8 @@
+import 'package:crave_max_foodapp/login_screen.dart';
+import 'package:crave_max_foodapp/routes/app_routes.dart';
+import 'package:crave_max_foodapp/utils/app_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart'; // Add google_fonts to pubspec.yaml for Inter font
 
 class SignUpScreen extends StatefulWidget {
@@ -44,7 +48,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 24),
+          padding: const EdgeInsets.only(left: 34, right: 34, top: 44),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -52,9 +56,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
               // Title
               Text(
-                'Create Account',
+                AppStrings.signupTitle,
                 style: GoogleFonts.inter(
-                  fontSize: 34,
+                  fontSize: 28,
                   fontWeight: FontWeight.w800,
                   color: Colors.black,
                 ),
@@ -63,9 +67,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
               // Subtitle
               Text(
-                'Sign up to get started',
+                AppStrings.signupSubtitle,
                 style: GoogleFonts.inter(
-                  fontSize: 16,
+                  fontSize: 18,
                   color: Colors.grey[700],
                 ),
               ),
@@ -74,7 +78,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               // Full name field
               TextFormField(
                 style: GoogleFonts.inter(fontSize: 16),
-                decoration: _fieldDecoration('Full name', 'Enter your full name'),
+                decoration: _fieldDecoration(AppStrings.fullNameLabel, AppStrings.fullNameHintText),
               ),
               const SizedBox(height: 20),
 
@@ -82,7 +86,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               TextFormField(
                 keyboardType: TextInputType.emailAddress,
                 style: GoogleFonts.inter(fontSize: 16),
-                decoration: _fieldDecoration('Email address', 'Enter your email'),
+                decoration: _fieldDecoration(AppStrings.emailAddressLabel, AppStrings.emailHintText),
               ),
               const SizedBox(height: 20),
 
@@ -90,7 +94,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               TextFormField(
                 obscureText: true,
                 style: GoogleFonts.inter(fontSize: 16),
-                decoration: _fieldDecoration('Password', 'Enter your password').copyWith(
+                decoration: _fieldDecoration(AppStrings.passwordLabel, AppStrings.passwordHintText).copyWith(
                   suffixIcon: IconButton(
                     icon: const Icon(
                       Icons.visibility_off_outlined,
@@ -106,7 +110,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               TextFormField(
                 obscureText: true,
                 style: GoogleFonts.inter(fontSize: 16),
-                decoration: _fieldDecoration('Confirm password', 'Re-enter your password').copyWith(
+                decoration: _fieldDecoration(AppStrings.confirmPasswordLabel, AppStrings.confirmPasswordHintText).copyWith(
                   suffixIcon: IconButton(
                     icon: const Icon(
                       Icons.visibility_off_outlined,
@@ -131,9 +135,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   Expanded(
                     child: Text(
-                      'I agree to the terms and conditions',
+                      AppStrings.tNcCheckboxLabel,
                       style: GoogleFonts.inter(
-                        fontSize: 15,
+                        fontSize: 16.5,
                         color: Colors.grey[800],
                       ),
                     ),
@@ -156,7 +160,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                   ),
                   child: Text(
-                    'Sign up',
+                    AppStrings.signupButtonText,
                     style: GoogleFonts.inter(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -173,23 +177,28 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Already have an account? ',
+                      AppStrings.authSwitchLogin.substring(0, AppStrings.authSwitchLogin.length - 5),
                       style: GoogleFonts.inter(
-                        fontSize: 15,
+                        fontSize: 18,
                         color: Colors.grey[700],
                       ),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () => {
+                        Get.toNamed(
+                          AppRoutes.login,
+                          arguments: LoginScreen()
+                        )
+                      },
                       style: TextButton.styleFrom(
                         padding: EdgeInsets.zero,
                         minimumSize: Size.zero,
                         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                       ),
                       child: Text(
-                        'Login',
+                        AppStrings.authSwitchLogin.substring(25, AppStrings.authSwitchLogin.length),
                         style: GoogleFonts.inter(
-                          fontSize: 15,
+                          fontSize: 18,
                           fontWeight: FontWeight.w700,
                           color: primaryColor,
                         ),

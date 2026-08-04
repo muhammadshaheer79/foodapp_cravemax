@@ -1,7 +1,11 @@
-import 'package:crave_max_foodapp/login_screen.dart';
-import 'package:crave_max_foodapp/profile_screen.dart';
-import 'package:crave_max_foodapp/signup_screen.dart';
+// import 'package:crave_max_foodapp/login_screen.dart';
+// import 'package:crave_max_foodapp/profile_screen.dart';
+import 'package:crave_max_foodapp/routes/app_routes.dart';
+import 'package:crave_max_foodapp/routes/route_management.dart';
+// import 'package:crave_max_foodapp/signup_screen.dart';
+import 'package:crave_max_foodapp/utils/app_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,9 +17,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: AppStrings.appTitle,
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -32,14 +36,16 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
+        scaffoldBackgroundColor: Colors.white,
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Scaffold(
-        backgroundColor: Colors.white,
-        // body: LoginScreen(),
+      initialRoute: AppRoutes.profile,
+      getPages: AppScreens.screens,
+      //home: Scaffold(
+        //body: LoginScreen(),
         // body: SignUpScreen(),
-        body: ProfileScreen(),
-      ),
+        // body: ProfileScreen(),
+      //),
     );
   }
 }
