@@ -1,4 +1,5 @@
 import 'package:crave_max_foodapp/routes/app_routes.dart';
+import 'package:crave_max_foodapp/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -113,7 +114,7 @@ class ProfileScreen extends StatelessWidget {
                               ),
                               //SizedBox(height: 6),
                               Text(
-                                "Posts",
+                                AppStrings.postsContainerText,
                                 style: TextStyle(
                                   fontSize: 12,
                                   color: Colors.black45,
@@ -148,7 +149,7 @@ class ProfileScreen extends StatelessWidget {
                               ),
                               //SizedBox(height: 6),
                               Text(
-                                "Followers",
+                                AppStrings.followersContainerText,
                                 style: TextStyle(
                                   fontSize: 12,
                                   color: Colors.black45,
@@ -183,7 +184,7 @@ class ProfileScreen extends StatelessWidget {
                               ),
                               //SizedBox(height: 6),
                               Text(
-                                "Following",
+                                AppStrings.followingContainerText,
                                 style: TextStyle(
                                   fontSize: 12,
                                   color: Colors.black45,
@@ -218,7 +219,7 @@ class ProfileScreen extends StatelessWidget {
                           ),
                           SizedBox(width: 10),
                           Text(
-                            "Edit Profile",
+                            AppStrings.editProfileBtnText,
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
@@ -259,7 +260,7 @@ class ProfileScreen extends StatelessWidget {
                                 ),
                                 SizedBox(width: 10),
                                 Text(
-                                  "Message",
+                                  AppStrings.messageBtnText,
                                   style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
@@ -295,7 +296,7 @@ class ProfileScreen extends StatelessWidget {
                                 ),
                                 SizedBox(width: 10),
                                 Text(
-                                  "Share",
+                                  AppStrings.shareBtnText,
                                   style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
@@ -349,7 +350,7 @@ class ProfileScreen extends StatelessWidget {
                               ),
                               SizedBox(width: 10,),
                               Text(
-                                "LOG OUT",
+                                AppStrings.logoutBtnText,
                                 style: TextStyle(
                                   fontSize: 18,
                                   color: Colors.red.shade600,

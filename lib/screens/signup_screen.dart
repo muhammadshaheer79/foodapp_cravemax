@@ -1,4 +1,4 @@
-import 'package:crave_max_foodapp/login_screen.dart';
+import 'package:crave_max_foodapp/screens/login_screen.dart';
 import 'package:crave_max_foodapp/routes/app_routes.dart';
 import 'package:crave_max_foodapp/utils/app_strings.dart';
 import 'package:flutter/material.dart';

@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: AppStrings.appTitle,
       theme: ThemeData(
+        useMaterial3: true,
         // This is the theme of your application.
         //
         // TRY THIS: Try running your application with "flutter run". You'll see
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      initialRoute: AppRoutes.profile,
+      initialRoute: AppRoutes.home,
       getPages: AppScreens.screens,
       //home: Scaffold(
         //body: LoginScreen(),

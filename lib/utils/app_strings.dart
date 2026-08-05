@@ -3,8 +3,8 @@ class AppStrings {
 
   // Title of the app
   static const appTitle = "CraveMax";
-  
-  // All unique text values in the Login Screen
+
+  // All unique non user-input text values in the Login Screen
   static const welcomeSubtitle = "Welcome! Sign in now to ordermax";
   static const authSwitchSignUp = "Don't have an account yet? Sign up";
   static const emailLabel = "Email";
@@ -13,8 +13,8 @@ class AppStrings {
   static const passwordHintText = "Enter your password";
   static const passwordRecoveryLinkTxt = "Forgot password?";
   static const loginButtonText = "LOGIN";
-  
-  // All unique text values in the Sign up screen:
+
+  // All unique non user-input text values in the Sign up screen:
   static const signupTitle = "Create account";
   static const signupSubtitle = "Sign up to get started";
   static const fullNameLabel = "Full name";
@@ -26,7 +26,13 @@ class AppStrings {
   static const signupButtonText = "SIGN UP";
   static const authSwitchLogin = "Already have an account? Login";
 
-  // All unique text values in the Profile screen:
-
+  // All unique non user-input text values in the Profile screen:
+  static const postsContainerText = "Posts";
+  static const followersContainerText = "Followers";
+  static const followingContainerText = "Following";
+  static const editProfileBtnText = "Edit Profile";
+  static const messageBtnText = "Message";
+  static const shareBtnText = "Share";
+  static const logoutBtnText = "LOG OUT";
 
 }
