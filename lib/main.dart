@@ -38,14 +38,14 @@ class MyApp extends StatelessWidget {
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
         scaffoldBackgroundColor: Colors.white,
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+        // colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      initialRoute: AppRoutes.home,
+      initialRoute: AppRoutes.login,
       getPages: AppScreens.screens,
       //home: Scaffold(
-        //body: LoginScreen(),
-        // body: SignUpScreen(),
-        // body: ProfileScreen(),
+      //body: LoginScreen(),
+      // body: SignUpScreen(),
+      // body: ProfileScreen(),
       //),
     );
   }

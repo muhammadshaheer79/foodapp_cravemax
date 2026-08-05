@@ -35,4 +35,8 @@ class AppStrings {
   static const shareBtnText = "Share";
   static const logoutBtnText = "LOG OUT";
 
+  // All unique non user-input text values in the Home screen:
+  static const trustedPicksTitle = "Your trusted picks";
+  static const viewAllBtnText = "View all";
+  static const searchHintText = "Search...";
 }

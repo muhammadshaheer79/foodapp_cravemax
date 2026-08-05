@@ -1,5 +1,4 @@
 import 'package:crave_max_foodapp/routes/app_routes.dart';
-import 'package:crave_max_foodapp/screens/signup_screen.dart';
 import 'package:crave_max_foodapp/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -90,10 +89,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   InkWell(
-                    onTap: () => Get.toNamed(
-                      AppRoutes.signup,
-                      arguments: SignUpScreen(),
-                    ),
+                    onTap: () => Get.toNamed(AppRoutes.signup),
                     child: Text(
                       AppStrings.authSwitchSignUp.substring(
                         27,
@@ -217,7 +213,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 width: double.infinity,
                 height: 56,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => Get.toNamed(AppRoutes.home),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFF47D4A7),
                     elevation: 0,

@@ -1,4 +1,3 @@
-import 'package:crave_max_foodapp/screens/login_screen.dart';
 import 'package:crave_max_foodapp/routes/app_routes.dart';
 import 'package:crave_max_foodapp/utils/app_strings.dart';
 import 'package:flutter/material.dart';
@@ -23,10 +22,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       hintStyle: GoogleFonts.inter(color: Colors.grey[400]),
       filled: true,
       fillColor: const Color(0xFFF7F8FA),
-      contentPadding: const EdgeInsets.symmetric(
-        horizontal: 20,
-        vertical: 18,
-      ),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(16),
         borderSide: BorderSide.none,
@@ -68,17 +64,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
               // Subtitle
               Text(
                 AppStrings.signupSubtitle,
-                style: GoogleFonts.inter(
-                  fontSize: 18,
-                  color: Colors.grey[700],
-                ),
+                style: GoogleFonts.inter(fontSize: 18, color: Colors.grey[700]),
               ),
               const SizedBox(height: 32),
 
               // Full name field
               TextFormField(
                 style: GoogleFonts.inter(fontSize: 16),
-                decoration: _fieldDecoration(AppStrings.fullNameLabel, AppStrings.fullNameHintText),
+                decoration: _fieldDecoration(
+                  AppStrings.fullNameLabel,
+                  AppStrings.fullNameHintText,
+                ),
               ),
               const SizedBox(height: 20),
 
@@ -86,7 +82,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
               TextFormField(
                 keyboardType: TextInputType.emailAddress,
                 style: GoogleFonts.inter(fontSize: 16),
-                decoration: _fieldDecoration(AppStrings.emailAddressLabel, AppStrings.emailHintText),
+                decoration: _fieldDecoration(
+                  AppStrings.emailAddressLabel,
+                  AppStrings.emailHintText,
+                ),
               ),
               const SizedBox(height: 20),
 
@@ -94,15 +93,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
               TextFormField(
                 obscureText: true,
                 style: GoogleFonts.inter(fontSize: 16),
-                decoration: _fieldDecoration(AppStrings.passwordLabel, AppStrings.passwordHintText).copyWith(
-                  suffixIcon: IconButton(
-                    icon: const Icon(
-                      Icons.visibility_off_outlined,
-                      color: Colors.grey,
+                decoration:
+                    _fieldDecoration(
+                      AppStrings.passwordLabel,
+                      AppStrings.passwordHintText,
+                    ).copyWith(
+                      suffixIcon: IconButton(
+                        icon: const Icon(
+                          Icons.visibility_off_outlined,
+                          color: Colors.grey,
+                        ),
+                        onPressed: () {},
+                      ),
                     ),
-                    onPressed: () {},
-                  ),
-                ),
               ),
               const SizedBox(height: 20),
 
@@ -110,15 +113,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
               TextFormField(
                 obscureText: true,
                 style: GoogleFonts.inter(fontSize: 16),
-                decoration: _fieldDecoration(AppStrings.confirmPasswordLabel, AppStrings.confirmPasswordHintText).copyWith(
-                  suffixIcon: IconButton(
-                    icon: const Icon(
-                      Icons.visibility_off_outlined,
-                      color: Colors.grey,
+                decoration:
+                    _fieldDecoration(
+                      AppStrings.confirmPasswordLabel,
+                      AppStrings.confirmPasswordHintText,
+                    ).copyWith(
+                      suffixIcon: IconButton(
+                        icon: const Icon(
+                          Icons.visibility_off_outlined,
+                          color: Colors.grey,
+                        ),
+                        onPressed: () {},
+                      ),
                     ),
-                    onPressed: () {},
-                  ),
-                ),
               ),
               const SizedBox(height: 24),
 
@@ -177,26 +184,27 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      AppStrings.authSwitchLogin.substring(0, AppStrings.authSwitchLogin.length - 5),
+                      AppStrings.authSwitchLogin.substring(
+                        0,
+                        AppStrings.authSwitchLogin.length - 5,
+                      ),
                       style: GoogleFonts.inter(
                         fontSize: 18,
                         color: Colors.grey[700],
                       ),
                     ),
                     TextButton(
-                      onPressed: () => {
-                        Get.toNamed(
-                          AppRoutes.login,
-                          arguments: LoginScreen()
-                        )
-                      },
+                      onPressed: () => {Get.toNamed(AppRoutes.login)},
                       style: TextButton.styleFrom(
                         padding: EdgeInsets.zero,
                         minimumSize: Size.zero,
                         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                       ),
                       child: Text(
-                        AppStrings.authSwitchLogin.substring(25, AppStrings.authSwitchLogin.length),
+                        AppStrings.authSwitchLogin.substring(
+                          25,
+                          AppStrings.authSwitchLogin.length,
+                        ),
                         style: GoogleFonts.inter(
                           fontSize: 18,
                           fontWeight: FontWeight.w700,

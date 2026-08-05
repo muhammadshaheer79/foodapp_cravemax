@@ -1,3 +1,4 @@
+import 'package:crave_max_foodapp/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -28,12 +29,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       Padding(
                         padding: EdgeInsets.only(left: 4.0),
                         child: Text(
-                          "Good evening, user 👋",
+                          "Good evening, Shaheer 👋",
                           style: GoogleFonts.inter(
                             fontSize: 18,
                             fontWeight: FontWeight.w700,
                           ),
-                        )
+                        ),
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -44,14 +45,14 @@ class _HomeScreenState extends State<HomeScreen> {
                             size: 22,
                             color: Colors.black,
                           ),
-                          SizedBox(width: 7,),
+                          SizedBox(width: 7),
                           Text(
-                            "3891 Ranchview, California",
+                            "3891 Karachi, Pakistan",
                             style: GoogleFonts.inter(
                               fontSize: 16,
-                              color: Colors.black
-                            )                          
-                          )
+                              color: Colors.black,
+                            ),
+                          ),
                         ],
                       ),
                     ],
@@ -63,27 +64,31 @@ class _HomeScreenState extends State<HomeScreen> {
                       Icon(
                         Icons.favorite_outline_rounded,
                         size: 28,
-                        color: Colors.black
+                        color: Colors.black,
                       ),
-                      SizedBox(width: 12,),            
+                      SizedBox(width: 12),
                       Icon(
                         Icons.notifications_none_rounded,
                         size: 28,
-                        color: Colors.black
-                      ),      
+                        color: Colors.black,
+                      ),
                     ],
                   ),
                 ],
-              )
+              ),
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(20, 26, 20, 0),
               child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30), // Gives it that fully rounded pill shape
+                  borderRadius: BorderRadius.circular(
+                    30,
+                  ), // Gives it that fully rounded pill shape
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.06), // Very soft, clean shadow
+                      color: Colors.black.withOpacity(
+                        0.06,
+                      ), // Very soft, clean shadow
                       // blurRadius: 10,
                       // spreadRadius: 2,
                       // offset: const Offset(0, 4),
@@ -92,12 +97,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 child: TextFormField(
                   textAlignVertical: TextAlignVertical.center,
-                  style: GoogleFonts.inter(
-                    color: Colors.black,
-                    fontSize: 18,
-                  ),
+                  style: GoogleFonts.inter(color: Colors.black, fontSize: 18),
                   decoration: InputDecoration(
-                    hintText: "Search...",
+                    hintText: AppStrings.searchHintText,
                     hintStyle: GoogleFonts.inter(
                       color: Colors.grey,
                       fontSize: 18,
@@ -110,16 +112,16 @@ class _HomeScreenState extends State<HomeScreen> {
                         color: Colors.black54,
                         size: 28,
                         fontWeight: FontWeight.w500,
-                      )
+                      ),
                     ),
                     prefixIconConstraints: const BoxConstraints(
                       minWidth: 50,
-                      minHeight: 50
+                      minHeight: 50,
                     ),
                     border: InputBorder.none,
                     errorStyle: const TextStyle(height: 0),
                     contentPadding: const EdgeInsets.symmetric(vertical: 14),
-                  )
+                  ),
                 ),
               ),
             ),
@@ -130,7 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Your trusted picks",
+                    AppStrings.trustedPicksTitle,
                     style: GoogleFonts.inter(
                       fontSize: 21,
                       color: Colors.black,
@@ -148,7 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     ),
                     child: Text(
-                      "View all",
+                      AppStrings.viewAllBtnText,
                       style: GoogleFonts.inter(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
@@ -159,12 +161,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ],
-              )
-            )
+              ),
+            ),
           ],
 
-        )
-      )
+          // WORK IN PROGRESS
+        ),
+      ),
     );
   }
 }
