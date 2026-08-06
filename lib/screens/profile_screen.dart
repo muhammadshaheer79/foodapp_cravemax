@@ -104,7 +104,7 @@ class ProfileScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "120",
+                                "7.000",
                                 style: TextStyle(
                                   fontFamily: "Segoe UI",
                                   fontSize: 21,
@@ -114,10 +114,11 @@ class ProfileScreen extends StatelessWidget {
                               ),
                               //SizedBox(height: 6),
                               Text(
-                                AppStrings.postsContainerText,
+                                AppStrings.rewardPointsText,
                                 style: TextStyle(
                                   fontSize: 12,
-                                  color: Colors.black45,
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.w500,
                                 ),
                               ),
                             ],
@@ -139,7 +140,7 @@ class ProfileScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "4.5K",
+                                "35",
                                 style: TextStyle(
                                   fontFamily: "Segoe UI",
                                   fontSize: 21,
@@ -149,10 +150,11 @@ class ProfileScreen extends StatelessWidget {
                               ),
                               //SizedBox(height: 6),
                               Text(
-                                AppStrings.followersContainerText,
+                                AppStrings.ordersPlacedText,
                                 style: TextStyle(
                                   fontSize: 12,
-                                  color: Colors.black45,
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.w500,
                                 ),
                               ),
                             ],
@@ -174,7 +176,7 @@ class ProfileScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "180",
+                                "12",
                                 style: TextStyle(
                                   fontFamily: "Segoe UI",
                                   fontSize: 21,
@@ -184,10 +186,11 @@ class ProfileScreen extends StatelessWidget {
                               ),
                               //SizedBox(height: 6),
                               Text(
-                                AppStrings.followingContainerText,
+                                AppStrings.favoritesText,
                                 style: TextStyle(
                                   fontSize: 12,
-                                  color: Colors.black45,
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.w500,
                                 ),
                               ),
                             ],

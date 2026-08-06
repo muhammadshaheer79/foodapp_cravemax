@@ -37,10 +37,10 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        scaffoldBackgroundColor: Colors.white,
+        scaffoldBackgroundColor: Color.fromARGB(255, 246, 246, 239),
         // colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      initialRoute: AppRoutes.login,
+      initialRoute: AppRoutes.profile,
       getPages: AppScreens.screens,
       //home: Scaffold(
       //body: LoginScreen(),

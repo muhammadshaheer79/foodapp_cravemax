@@ -27,9 +27,9 @@ class AppStrings {
   static const authSwitchLogin = "Already have an account? Login";
 
   // All unique non user-input text values in the Profile screen:
-  static const postsContainerText = "Posts";
-  static const followersContainerText = "Followers";
-  static const followingContainerText = "Following";
+  static const rewardPointsText = "Crave Points";
+  static const ordersPlacedText = "Orders Placed";
+  static const favoritesText = "Favorites";
   static const editProfileBtnText = "Edit Profile";
   static const messageBtnText = "Message";
   static const shareBtnText = "Share";

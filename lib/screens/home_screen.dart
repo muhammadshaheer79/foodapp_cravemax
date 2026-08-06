@@ -15,6 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: SafeArea(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
               padding: EdgeInsets.fromLTRB(20, 18, 20, 0),
@@ -57,53 +58,66 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
-                  Row(
-                    // This aligns all icons and text perfectly on their center line
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: const [
-                      Icon(
-                        Icons.favorite_outline_rounded,
-                        size: 28,
-                        color: Colors.black,
-                      ),
-                      SizedBox(width: 12),
-                      Icon(
-                        Icons.notifications_none_rounded,
-                        size: 28,
-                        color: Colors.black,
-                      ),
-                    ],
+                  Padding(
+                    padding: EdgeInsets.only(top: 12),
+                    child: Row(
+                      // This aligns all icons and text perfectly on their center line
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: const [
+                        Icon(
+                          Icons.favorite_outline_rounded,
+                          size: 28,
+                          color: Colors.black,
+                        ),
+                        SizedBox(width: 14),
+                        Icon(
+                          Icons.notifications_none_rounded,
+                          size: 30,
+                          color: Colors.black,
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(20, 26, 20, 0),
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(
-                    30,
-                  ), // Gives it that fully rounded pill shape
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(
-                        0.06,
-                      ), // Very soft, clean shadow
-                      // blurRadius: 10,
-                      // spreadRadius: 2,
-                      // offset: const Offset(0, 4),
-                    ),
-                  ],
-                ),
-                child: TextFormField(
+              child: //Container(
+                // decoration: BoxDecoration(
+                //   borderRadius: BorderRadius.circular(
+                //     40,
+                //   ), // Gives it that fully rounded pill shape
+                //   boxShadow: [
+                //     BoxShadow(
+                //       color: Colors.black.withOpacity(
+                //         0.06,
+                //       ), // Very soft, clean shadow
+                //       // blurRadius: 10,
+                //       // spreadRadius: 2,
+                //       // offset: const Offset(0, 4),
+                //     ),
+                //   ],
+                // ),
+                TextFormField(
                   textAlignVertical: TextAlignVertical.center,
                   style: GoogleFonts.inter(color: Colors.black, fontSize: 18),
                   decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
                     hintText: AppStrings.searchHintText,
                     hintStyle: GoogleFonts.inter(
                       color: Colors.grey,
                       fontSize: 18,
                       fontWeight: FontWeight.w400,
+                    ),
+                    enabledBorder: OutlineInputBorder(  // Unfocused Color
+                      borderRadius: BorderRadius.circular(40),
+                      borderSide: BorderSide(color: Colors.grey.shade300),
+                    ),
+                    focusedBorder: OutlineInputBorder(  // Focused Color
+                      borderRadius: BorderRadius.circular(40),
+                      borderSide: BorderSide(color: Colors.black45),
                     ),
                     prefixIcon: const Padding(
                       padding: EdgeInsets.only(left: 20.0, right: 8.0),
@@ -115,15 +129,15 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     prefixIconConstraints: const BoxConstraints(
-                      minWidth: 50,
-                      minHeight: 50,
+                      minWidth: 40,
+                      minHeight: 40,
                     ),
                     border: InputBorder.none,
                     errorStyle: const TextStyle(height: 0),
-                    contentPadding: const EdgeInsets.symmetric(vertical: 14),
+                    contentPadding: const EdgeInsets.symmetric(vertical: 10),
                   ),
                 ),
-              ),
+              //),
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(21, 24, 21, 0),
@@ -161,6 +175,316 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 20, top: 10, right: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: Stack(
+                      children: [
+                        Card(
+                          color: Colors.white,
+                          clipBehavior: Clip.antiAlias,
+                          elevation: 3,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(14),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.all(12.0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Image.network(
+                                  "https://thumbs.dreamstime.com/b/highresolution-image-showcasing-crispy-chicken-sandwich-complete-mayonnaise-fresh-vegetables-sesame-bun-golden-breaded-457903015.jpg",
+                                  height: 130,
+                                  width: double.infinity,
+                                  fit: BoxFit.contain,
+                                ),
+                                SizedBox(height: 10),
+                                SizedBox(
+                                  width: double.infinity,
+                                  child: Text(
+                                    "Chicken Burger",
+                                    style: GoogleFonts.inter(
+                                      fontSize: 18,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                    textAlign: TextAlign.left,
+                                  ),
+                                ),
+                                SizedBox(height: 5),
+                                SizedBox(
+                                  width: double.infinity,
+                                  child: Text(
+                                    "Fast food",
+                                    style: GoogleFonts.inter(
+                                      fontSize: 15,
+                                      color: Colors.black45,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                    textAlign: TextAlign.left,
+                                  ),
+                                ),
+                                SizedBox(height: 5),
+                                SizedBox(
+                                  width: double.infinity,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                      Icon(
+                                        Icons.timer_outlined,
+                                        size: 15,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w800,
+                                      ),
+                                      SizedBox(width: 4,),
+                                      Text(
+                                        "15 min",
+                                        style: GoogleFonts.inter(
+                                          fontSize: 14,
+                                          color: Colors.black45,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                        textAlign: TextAlign.left,
+                                      ),
+                                      SizedBox(width: 3.5,),
+                                      SizedBox(
+                                        height: 12,
+                                        child: VerticalDivider(
+                                          color: Colors.grey,
+                                          thickness: 1,
+                                          width: 1,
+                                        )
+                                      ),
+                                      SizedBox(width: 3.5,),
+                                      Text(
+                                        "400 Kcal",
+                                        style: GoogleFonts.inter(
+                                          fontSize: 14,
+                                          color: Colors.black45,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                        textAlign: TextAlign.left,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(height: 8),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "\$25.00",
+                                      style: GoogleFonts.inter(
+                                        fontSize: 19,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                    Icon(
+                                      Icons.add_circle_rounded,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                      size: 36,
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          top: 16,
+                          right: 16.5,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.star_rounded,
+                                color: Colors.amber.shade400,
+                                size: 19,
+                                fontWeight: FontWeight.w700,
+                              ),
+                              SizedBox(width: 3,),
+                              Text(
+                                "4.5",
+                                style: GoogleFonts.inter(
+                                  fontSize: 13.5,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ],
+                          )
+                        )
+                      ],
+                    ),  
+                  ),
+                  SizedBox(width: 8),
+                  Expanded(
+                    child: Stack(
+                      children: [
+                        Card(
+                          color: Colors.white,
+                          clipBehavior: Clip.antiAlias,
+                          elevation: 3,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(14),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.all(12.0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Image.network(
+                                  "https://t4.ftcdn.net/jpg/16/93/69/07/360_F_1693690769_AyElZH2ia3mWn5XpK6iIdHjuMiV9m2Sh.jpg",
+                                  height: 130,
+                                  width: double.infinity,
+                                  fit: BoxFit.contain,
+                                ),
+                                SizedBox(height: 10),
+                                SizedBox(
+                                  width: double.infinity,
+                                  child: Text(
+                                    "Beef Burger",
+                                    style: GoogleFonts.inter(
+                                      fontSize: 18,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                    textAlign: TextAlign.left,
+                                  ),
+                                ),
+                                SizedBox(height: 5),
+                                SizedBox(
+                                  width: double.infinity,
+                                  child: Text(
+                                    "Fast food",
+                                    style: GoogleFonts.inter(
+                                      fontSize: 15,
+                                      color: Colors.black45,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                    textAlign: TextAlign.left,
+                                  ),
+                                ),
+                                SizedBox(height: 5),
+                                SizedBox(
+                                  width: double.infinity,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                      Icon(
+                                        Icons.timer_outlined,
+                                        size: 15,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w800,
+                                      ),
+                                      SizedBox(width: 4,),
+                                      Text(
+                                        "15 min",
+                                        style: GoogleFonts.inter(
+                                          fontSize: 14,
+                                          color: Colors.black45,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                        textAlign: TextAlign.left,
+                                      ),
+                                      SizedBox(width: 3.5,),
+                                      SizedBox(
+                                        height: 12,
+                                        child: VerticalDivider(
+                                          color: Colors.grey,
+                                          thickness: 1,
+                                          width: 1,
+                                        )
+                                      ),
+                                      SizedBox(width: 3.5,),
+                                      Text(
+                                        "500 Kcal",
+                                        style: GoogleFonts.inter(
+                                          fontSize: 14,
+                                          color: Colors.black45,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                        textAlign: TextAlign.left,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(height: 8),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "\$30.00",
+                                      style: GoogleFonts.inter(
+                                        fontSize: 19,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                    Icon(
+                                      Icons.add_circle_rounded,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                      size: 36,
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          top: 16,
+                          right: 16.5,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.star_rounded,
+                                color: Colors.amber.shade400,
+                                size: 19,
+                                fontWeight: FontWeight.w700,
+                              ),
+                              SizedBox(width: 3,),
+                              Text(
+                                "4.5",
+                                style: GoogleFonts.inter(
+                                  fontSize: 13.5,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ],
+                          )
+                        )
+                      ],
+                    ),  
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 28, left: 20),
+              child: Text(
+                "Recommended",
+                style: GoogleFonts.inter(
+                  fontSize: 21,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ),
           ],
