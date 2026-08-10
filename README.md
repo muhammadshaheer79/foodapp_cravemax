@@ -10,6 +10,13 @@ A project to test my learning about Flutter.
 - Signup screen
 - Home screen
 - Profile screen
+- My Order Screen
+- Saved Screen
+
+## Bottom navigation bar widget in main layout.dart
+
+## State management tool: -
+- GetX
 
 ## How to run this project locally at your end: -
 

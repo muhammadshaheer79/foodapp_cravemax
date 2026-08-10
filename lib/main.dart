@@ -1,18 +1,18 @@
 // import 'package:crave_max_foodapp/login_screen.dart';
 // import 'package:crave_max_foodapp/profile_screen.dart';
-import 'package:crave_max_foodapp/routes/app_routes.dart';
-import 'package:crave_max_foodapp/routes/route_management.dart';
+import 'package:crave_max_foodapp/app/routes/app_routes.dart';
+import 'package:crave_max_foodapp/app/routes/route_management.dart';
 // import 'package:crave_max_foodapp/signup_screen.dart';
-import 'package:crave_max_foodapp/utils/app_strings.dart';
+import 'package:crave_max_foodapp/app/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const CraveMaxApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class CraveMaxApp extends StatelessWidget {
+  const CraveMaxApp({super.key});
 
   // This widget is the root of your application.
   @override
@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Color.fromARGB(255, 246, 246, 239),
         // colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      initialRoute: AppRoutes.profile,
+      initialRoute: AppRoutes.login,
       getPages: AppScreens.screens,
       //home: Scaffold(
       //body: LoginScreen(),

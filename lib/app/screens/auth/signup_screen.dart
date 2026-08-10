@@ -1,5 +1,6 @@
-import 'package:crave_max_foodapp/routes/app_routes.dart';
-import 'package:crave_max_foodapp/utils/app_strings.dart';
+import 'package:crave_max_foodapp/app/routes/app_routes.dart';
+import 'package:crave_max_foodapp/app/utils/app_strings.dart';
+import 'package:crave_max_foodapp/app/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart'; // Add google_fonts to pubspec.yaml for Inter font
@@ -41,7 +42,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.only(left: 34, right: 34, top: 44),
@@ -157,28 +157,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
               SizedBox(
                 width: double.infinity,
                 height: 56,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: primaryColor,
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                  ),
-                  child: Text(
-                    AppStrings.signupButtonText,
-                    style: GoogleFonts.inter(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
+                child: CustomElevatedButton(
+                  labelText: AppStrings.signupButtonText, 
+                  color: primaryColor, 
+                  fontSize: 18, 
+                  fontWeight: FontWeight.bold, 
+                  onPress: () => {}
                 ),
               ),
               const SizedBox(height: 24),
 
-              // Already have an account row
+              // Already have an account? Login text button
               Center(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,

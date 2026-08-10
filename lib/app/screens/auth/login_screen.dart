@@ -1,5 +1,7 @@
-import 'package:crave_max_foodapp/routes/app_routes.dart';
-import 'package:crave_max_foodapp/utils/app_strings.dart';
+import 'package:crave_max_foodapp/app/routes/app_routes.dart';
+import 'package:crave_max_foodapp/app/screens/auth/widgets/social_icon.dart';
+import 'package:crave_max_foodapp/app/utils/app_strings.dart';
+import 'package:crave_max_foodapp/app/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -212,47 +214,36 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(
                 width: double.infinity,
                 height: 56,
-                child: ElevatedButton(
-                  onPressed: () => Get.toNamed(AppRoutes.home),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xFF47D4A7),
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                  ),
-                  child: Text(
-                    AppStrings.loginButtonText,
-                    style: GoogleFonts.inter(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
+                child: CustomElevatedButton(
+                  labelText: AppStrings.loginButtonText,
+                  color: Color(0xFF47D4A7),
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  onPress: () => Get.toNamed(AppRoutes.mainLayout),
                 ),
               ),
-              const SizedBox(height: 32),
+              const SizedBox(height: 38),
 
               // Social login icons
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  _SocialIconPlaceholder(
-                    onTap: () {},
-                    icon: Icons.camera_alt, // placeholder for Instagram
-                    color: const Color(0xFFE1306C),
+                  SocialAuthIcon(
+                    onTap: () => {},
+                    svgIcon: "assets/icons/insta_svg.svg", // placeholder for Instagram
+                    // color: const Color(0xFFE1306C),
                   ),
-                  const SizedBox(width: 20),
-                  _SocialIconPlaceholder(
-                    onTap: () {},
-                    icon: Icons.g_mobiledata, // placeholder for Google
-                    color: const Color(0xFFDB4437),
+                  const SizedBox(width: 34),
+                  SocialAuthIcon(
+                    onTap: () => {},
+                    svgIcon: "assets/icons/google_svg.svg", // placeholder for Google
+                    // color: const Color(0xFFDB4437),
                   ),
-                  const SizedBox(width: 20),
-                  _SocialIconPlaceholder(
-                    onTap: () {},
-                    icon: Icons.facebook,
-                    color: const Color(0xFF1877F2),
+                  const SizedBox(width: 34),
+                  SocialAuthIcon(
+                    onTap: () => {},
+                    svgIcon: "assets/icons/facebook_svg.svg",
+                    // color: const Color(0xFF1877F2),
                   ),
                 ],
               ),
@@ -282,33 +273,7 @@ class _LoginScreenState extends State<LoginScreen> {
 // ),
 // SizedBox(height: 26),
 
-// Simple inline social icon button (kept minimal, not a full custom widget
-// system — replace icons with actual brand assets/icon packages as needed).
-class _SocialIconPlaceholder extends StatelessWidget {
-  final VoidCallback onTap;
-  final IconData icon;
-  final Color color;
 
-  const _SocialIconPlaceholder({
-    required this.onTap,
-    required this.icon,
-    required this.color,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(24),
-      child: Container(
-        width: 48,
-        height: 48,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          border: Border.all(color: Colors.grey[300]!),
-        ),
-        child: Icon(icon, color: color, size: 24),
-      ),
-    );
-  }
-}
+// class _SocialIconPlaceholder extends StatelessWidget {
+  
+// }

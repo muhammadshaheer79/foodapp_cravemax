@@ -26,6 +26,21 @@ class AppStrings {
   static const signupButtonText = "SIGN UP";
   static const authSwitchLogin = "Already have an account? Login";
 
+  // All unique and non user-input text values in the main layout (Bottom tab bar):
+  static const homeTabBarText = "Home";
+  static const myOrderTabBarText = "My Order";
+  static const savedTabBarText = "Saved";
+  static const profileTabBarText = "Profile";
+
+  // All unique non user-input text values in the Home screen:
+  static const trustedPicksTitle = "Your trusted picks";
+  static const viewAllBtnText = "View all";
+  static const searchHintText = "Search...";
+  static const recommendedTitle = "Recommended";
+
+  // All unique non user-input text values in the FoodListItem sub-widget:
+  static const addBtnText = "Add";
+
   // All unique non user-input text values in the Profile screen:
   static const rewardPointsText = "Crave Points";
   static const ordersPlacedText = "Orders Placed";
@@ -34,9 +49,4 @@ class AppStrings {
   static const messageBtnText = "Message";
   static const shareBtnText = "Share";
   static const logoutBtnText = "LOG OUT";
-
-  // All unique non user-input text values in the Home screen:
-  static const trustedPicksTitle = "Your trusted picks";
-  static const viewAllBtnText = "View all";
-  static const searchHintText = "Search...";
 }

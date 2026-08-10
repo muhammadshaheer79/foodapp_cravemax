@@ -1,6 +1,7 @@
 class FoodItem {
   final String id;
   final String name;
+  final String category;
   final String description;
   final String imageUrl;
   final double price;
@@ -11,12 +12,14 @@ class FoodItem {
   final int proteinGrams;
   final int carbsGrams;
   final int fatsGrams;
+  final bool isFavorite;
   final bool isBestseller;
   final bool isVeg; // Displays green dot if true, red if false
 
-  FoodItem({
+  const FoodItem({
     required this.id,
     required this.name,
+    required this.category,
     required this.description,
     required this.imageUrl,
     required this.price,
@@ -27,6 +30,7 @@ class FoodItem {
     required this.proteinGrams,
     required this.carbsGrams,
     required this.fatsGrams,
+    this.isFavorite = false,
     this.isBestseller = false,
     this.isVeg = false,
   });

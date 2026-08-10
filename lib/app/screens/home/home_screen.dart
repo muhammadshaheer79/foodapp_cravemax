@@ -1,6 +1,7 @@
-import 'package:crave_max_foodapp/utils/app_strings.dart';
+import 'package:crave_max_foodapp/app/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+// import 'package:crave_max_foodapp/app/screens/home/widgets/food_list_item.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -143,7 +144,7 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: EdgeInsets.fromLTRB(21, 24, 21, 0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
                     AppStrings.trustedPicksTitle,
@@ -304,7 +305,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           right: 16.5,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Icon(
                                 Icons.star_rounded,
@@ -316,7 +317,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               Text(
                                 "4.5",
                                 style: GoogleFonts.inter(
-                                  fontSize: 13.5,
+                                  fontSize: 14,
                                   color: Colors.black,
                                   fontWeight: FontWeight.w600,
                                 ),
@@ -455,14 +456,14 @@ class _HomeScreenState extends State<HomeScreen> {
                               Icon(
                                 Icons.star_rounded,
                                 color: Colors.amber.shade400,
-                                size: 19,
+                                size: 19.5,
                                 fontWeight: FontWeight.w700,
                               ),
                               SizedBox(width: 3,),
                               Text(
                                 "4.5",
                                 style: GoogleFonts.inter(
-                                  fontSize: 13.5,
+                                  fontSize: 14,
                                   color: Colors.black,
                                   fontWeight: FontWeight.w600,
                                 ),
@@ -487,9 +488,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
+            // WORK IN PROGRESS
+            SizedBox(height: 6,),
+            // FoodListItem(),             // FoodListItem(),
           ],
-
-          // WORK IN PROGRESS
         ),
       ),
     );
