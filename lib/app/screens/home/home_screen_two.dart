@@ -1,10 +1,12 @@
 import 'package:crave_max_foodapp/app/data/dummy_data.dart';
 import 'package:crave_max_foodapp/app/data/models/food_item.dart';
+import 'package:crave_max_foodapp/app/routes/app_routes.dart';
 import 'package:crave_max_foodapp/app/screens/home/widgets/food_card.dart';
 import 'package:crave_max_foodapp/app/screens/home/widgets/food_list_item.dart';
 import 'package:crave_max_foodapp/app/screens/home/widgets/search_bar.dart';
 import 'package:crave_max_foodapp/app/utils/app_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreenTwo extends StatefulWidget {
@@ -173,7 +175,10 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
 
                     return FoodCard(
                       foodItem: foodItem,
-                      onTap: () => {},
+                      onTap: () => Get.toNamed(
+                        AppRoutes.foodItemDetails,
+                        arguments: foodItem,
+                      ),
                       onAddToCart: () => {},
                     );
                   },
@@ -202,7 +207,10 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                 final foodItem = _bestSellerFoodItems[index];
                 return FoodListItem(
                   foodItem: foodItem,
-                  onTap: () => {},
+                  onTap: () => Get.toNamed(
+                    AppRoutes.foodItemDetails,
+                    arguments: foodItem,
+                  ),
                   onAddToCart: () => {},
                 );
               }, childCount: _bestSellerFoodItems.length),

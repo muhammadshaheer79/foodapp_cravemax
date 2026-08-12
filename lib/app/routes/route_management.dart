@@ -1,8 +1,10 @@
 // import 'package:crave_max_foodapp/app/screens/home/home_screen.dart';
+import 'package:crave_max_foodapp/app/data/models/food_item.dart';
 import 'package:crave_max_foodapp/app/screens/auth/login_screen.dart';
 // import 'package:crave_max_foodapp/app/screens/profile/profile_screen.dart';
 import 'package:crave_max_foodapp/app/routes/app_routes.dart';
 import 'package:crave_max_foodapp/app/screens/auth/signup_screen.dart';
+import 'package:crave_max_foodapp/app/screens/food_detail/food_item_detail.dart';
 import 'package:crave_max_foodapp/app/widgets/main_layout.dart';
 import 'package:get/get.dart';
 
@@ -13,6 +15,11 @@ class AppScreens {
     GetPage(name: AppRoutes.login, page: () => const LoginScreen()),
     GetPage(name: AppRoutes.signup, page: () => const SignUpScreen()),
     GetPage(name: AppRoutes.mainLayout, page: () => MainLayout()),
+    GetPage(
+      name: AppRoutes.foodItemDetails,
+      page: () => FoodItemDetail(foodItem: Get.arguments as FoodItem),
+      transition: Transition.rightToLeft,
+    ),
     // GetPage(name: AppRoutes.home, page: () => const HomeScreen()),
     // GetPage(name: AppRoutes.profile, page: () => const ProfileScreen()),
   ];

@@ -8,6 +8,7 @@ class FoodItem {
   final double rating;
   final int totalReviews;
   final String duration; // e.g., "8-10 min" or "15 min"
+  final String servingSize; // e.g., "8-10 min" or "15 min"
   final int calories; // e.g., 124 or 500
   final int proteinGrams;
   final int carbsGrams;
@@ -26,6 +27,7 @@ class FoodItem {
     required this.rating,
     required this.totalReviews,
     required this.duration,
+    required this.servingSize,
     required this.calories,
     required this.proteinGrams,
     required this.carbsGrams,
