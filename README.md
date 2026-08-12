@@ -12,6 +12,7 @@ A project to test my learning about Flutter.
 - Profile screen
 - My Order Screen
 - Saved Screen
+- Food Item Details Screen
 
 ## Bottom navigation bar widget in main layout.dart
 
