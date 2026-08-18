@@ -14,23 +14,7 @@ class _StickySearchBarState extends State<StickySearchBar> {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.fromLTRB(20, 26, 20, 0),
-      child: //Container(
-          // decoration: BoxDecoration(
-          //   borderRadius: BorderRadius.circular(
-          //     40,
-          //   ), // Gives it that fully rounded pill shape
-          //   boxShadow: [
-          //     BoxShadow(
-          //       color: Colors.black.withOpacity(
-          //         0.06,
-          //       ), // Very soft, clean shadow
-          //       // blurRadius: 10,
-          //       // spreadRadius: 2,
-          //       // offset: const Offset(0, 4),
-          //     ),
-          //   ],
-          // ),
-        TextFormField(
+      child: TextFormField(
           textAlignVertical: TextAlignVertical.center,
           style: GoogleFonts.inter(color: Colors.black, fontSize: 18),
           decoration: InputDecoration(

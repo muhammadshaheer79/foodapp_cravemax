@@ -18,14 +18,10 @@ class ProfileScreen extends StatelessWidget {
                 clipBehavior: Clip.none,
                 alignment: Alignment.topCenter,
                 children: [
-                  // 🔧 FIX: This Column is the Stack's only *non-positioned* child,
-                  // so its natural height (gradient + white card) becomes the
-                  // Stack's real height. SingleChildScrollView can now measure
-                  // and scroll it correctly.
                   Column(
                     children: [
                       Container(
-                        height: 325, // 🔧 FIX: gradient container now has explicit height
+                        height: 325, 
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
                             begin: Alignment.topLeft,
@@ -38,9 +34,6 @@ class ProfileScreen extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        // 🔧 FIX: no longer Positioned(bottom:0...) — it just
-                        // flows normally after the gradient, so it can grow
-                        // as tall as its content needs.
                         width: double.infinity,
                         color: Color.fromARGB(255, 246, 246, 239),
                         child: Column(
@@ -209,28 +202,6 @@ class ProfileScreen extends StatelessWidget {
                                   iconColor: Colors.white,
                                 )
                               )
-                                // Container(
-                                //   height: 55,
-                                //   decoration: BoxDecoration(
-                                //     color: Color(0xFF47D4A7),
-                                //     borderRadius: BorderRadius.circular(16),
-                                //   ),
-                                //   child: Row(
-                                //     mainAxisAlignment: MainAxisAlignment.center,
-                                //     children: [
-                                //       Icon(Icons.edit, size: 20, color: Colors.white),
-                                //       SizedBox(width: 10),
-                                //       Text(
-                                //         AppStrings.editProfileBtnText,
-                                //         style: TextStyle(
-                                //           fontSize: 18,
-                                //           fontWeight: FontWeight.bold,
-                                //           color: Colors.white,
-                                //         ),
-                                //       ),
-                                //     ],
-                                //   ),
-                                // ),
                             ),
                             SizedBox(height: 18),
                             Padding(
@@ -324,9 +295,6 @@ class ProfileScreen extends StatelessWidget {
                     ],
                   ),
 
-                  // 🔧 FIX: only `top` is set now (no `bottom`), so the child's
-                  // own size (CircleAvatar radius) is respected instead of being
-                  // stretched. Positioned at 275 so it straddles the 325px seam.
                   Positioned(
                     top: 275,
                     child: CircleAvatar(
@@ -351,65 +319,3 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 }
-
-
-// EditProfile Hardcoded button:
-/* Container(
-  height: 55,
-  decoration: BoxDecoration(
-    color: Color(0xFF47D4A7),
-    borderRadius: BorderRadius.circular(16),
-  ),
-  child: Row(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-      Icon(Icons.edit, size: 20, color: Colors.white),
-      SizedBox(width: 10),
-      Text(
-        AppStrings.editProfileBtnText,
-        style: TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.bold,
-          color: Colors.white,
-        ),
-      ),
-    ],
-  ),
-), */
-
-// Logout Button hardcoded:
-// InkWell(
-//   borderRadius: BorderRadius.circular(14),
-//   onTap: () => Get.offAllNamed(AppRoutes.login),
-//   child: Container(
-//     height: 50,
-//     decoration: BoxDecoration(
-//       color: Colors.white,
-//       borderRadius: BorderRadius.circular(16),
-//       border: BoxBorder.all(
-//         color: Colors.red.shade300,
-//         style: BorderStyle.solid,
-//       ),
-//     ),
-//     alignment: Alignment.center,
-//     child: Row(
-//       mainAxisAlignment: MainAxisAlignment.center,
-//       children: [
-//         Icon(
-//           Icons.logout_rounded,
-//           size: 20,
-//           color: Colors.red.shade600,
-//         ),
-//         SizedBox(width: 10),
-//         Text(
-//           AppStrings.logoutBtnText,
-//           style: TextStyle(
-//             fontSize: 18,
-//             color: Colors.red.shade600,
-//             fontWeight: FontWeight.w600,
-//           ),
-//         ),
-//       ],
-//     ),
-//   ),
-// ),

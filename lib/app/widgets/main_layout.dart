@@ -1,7 +1,7 @@
 import 'package:crave_max_foodapp/app/controllers/main_layout_controller.dart';
 import 'package:crave_max_foodapp/app/screens/favorite/favorite_screen.dart';
 // import 'package:crave_max_foodapp/app/screens/home/home_screen.dart';
-import 'package:crave_max_foodapp/app/screens/home/home_screen_two.dart';
+import 'package:crave_max_foodapp/app/screens/home/home_screen.dart';
 import 'package:crave_max_foodapp/app/screens/order/order_screen.dart';
 import 'package:crave_max_foodapp/app/screens/profile/profile_screen.dart';
 import 'package:crave_max_foodapp/app/utils/app_strings.dart';
@@ -91,7 +91,7 @@ class MainLayout extends StatelessWidget {
           initialRoute: '/home',
           onGenerateRoute: (settings) {
             if (settings.name == '/home') {
-              return GetPageRoute(page: () => const HomeScreenTwo());
+              return GetPageRoute(page: () => const HomeScreen());
             }
             if (settings.name == '/my-order') {
               return GetPageRoute(page: () => const OrderScreen());

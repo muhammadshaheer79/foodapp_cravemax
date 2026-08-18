@@ -42,11 +42,6 @@ class CraveMaxApp extends StatelessWidget {
       ),
       initialRoute: AppRoutes.login,
       getPages: AppScreens.screens,
-      //home: Scaffold(
-      //body: LoginScreen(),
-      // body: SignUpScreen(),
-      // body: ProfileScreen(),
-      //),
     );
   }
 }

@@ -1,9 +1,11 @@
 import 'package:crave_max_foodapp/app/routes/app_routes.dart';
+import 'package:crave_max_foodapp/app/screens/auth/widgets/social_icon.dart';
 import 'package:crave_max_foodapp/app/utils/app_strings.dart';
 import 'package:crave_max_foodapp/app/widgets/custom_elevated_button.dart';
+import 'package:crave_max_foodapp/app/widgets/custom_textform_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart'; // Add google_fonts to pubspec.yaml for Inter font
+import 'package:google_fonts/google_fonts.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -15,30 +17,6 @@ class SignUpScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignUpScreen> {
   static const Color primaryColor = Color(0xFF47D4A7);
 
-  InputDecoration _fieldDecoration(String label, String hint) {
-    return InputDecoration(
-      labelText: label,
-      hintText: hint,
-      labelStyle: GoogleFonts.inter(color: Colors.grey[600]),
-      hintStyle: GoogleFonts.inter(color: Colors.grey[400]),
-      filled: true,
-      fillColor: const Color(0xFFF7F8FA),
-      contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide.none,
-      ),
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(color: Colors.grey[300]!),
-      ),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: const BorderSide(color: primaryColor, width: 1.5),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,9 +26,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 40),
+              const SizedBox(height: 45),
 
-              // Title
+              // Signup Screen Title
               Text(
                 AppStrings.signupTitle,
                 style: GoogleFonts.inter(
@@ -68,64 +46,39 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               const SizedBox(height: 32),
 
-              // Full name field
-              TextFormField(
-                style: GoogleFonts.inter(fontSize: 16),
-                decoration: _fieldDecoration(
-                  AppStrings.fullNameLabel,
-                  AppStrings.fullNameHintText,
-                ),
+              // Full name text field
+              CustomTextFormField(
+                fontSize: 16,
+                labelText: AppStrings.fullNameLabel,
+                hintText: AppStrings.fullNameHintText,
+              ),
+
+              const SizedBox(height: 20),
+
+              // Email text field
+              CustomTextFormField(
+                fontSize: 16,
+                labelText: AppStrings.emailAddressLabel,
+                hintText: AppStrings.emailHintText,
+                isEmailTxtField: true,
               ),
               const SizedBox(height: 20),
 
-              // Email field
-              TextFormField(
-                keyboardType: TextInputType.emailAddress,
-                style: GoogleFonts.inter(fontSize: 16),
-                decoration: _fieldDecoration(
-                  AppStrings.emailAddressLabel,
-                  AppStrings.emailHintText,
-                ),
+              // Password text field
+              CustomTextFormField(
+                fontSize: 16,
+                labelText: AppStrings.passwordLabel,
+                hintText: AppStrings.passwordHintText,
+                isEmailTxtField: true,
               ),
               const SizedBox(height: 20),
 
-              // Password field
-              TextFormField(
-                obscureText: true,
-                style: GoogleFonts.inter(fontSize: 16),
-                decoration:
-                    _fieldDecoration(
-                      AppStrings.passwordLabel,
-                      AppStrings.passwordHintText,
-                    ).copyWith(
-                      suffixIcon: IconButton(
-                        icon: const Icon(
-                          Icons.visibility_off_outlined,
-                          color: Colors.grey,
-                        ),
-                        onPressed: () {},
-                      ),
-                    ),
-              ),
-              const SizedBox(height: 20),
-
-              // Confirm password field
-              TextFormField(
-                obscureText: true,
-                style: GoogleFonts.inter(fontSize: 16),
-                decoration:
-                    _fieldDecoration(
-                      AppStrings.confirmPasswordLabel,
-                      AppStrings.confirmPasswordHintText,
-                    ).copyWith(
-                      suffixIcon: IconButton(
-                        icon: const Icon(
-                          Icons.visibility_off_outlined,
-                          color: Colors.grey,
-                        ),
-                        onPressed: () {},
-                      ),
-                    ),
+              // Confirm password text field
+              CustomTextFormField(
+                fontSize: 16,
+                labelText: AppStrings.confirmPasswordLabel,
+                hintText: AppStrings.confirmPasswordHintText,
+                isEmailTxtField: true,
               ),
               const SizedBox(height: 24),
 
@@ -158,19 +111,20 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 width: double.infinity,
                 height: 56,
                 child: CustomElevatedButton(
-                  labelText: AppStrings.signupButtonText, 
-                  color: primaryColor, 
-                  fontSize: 18, 
-                  fontWeight: FontWeight.bold, 
-                  onPress: () => {}
+                  labelText: AppStrings.signupButtonText,
+                  color: primaryColor,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  onPress: () => {},
                 ),
               ),
-              const SizedBox(height: 24),
+              const SizedBox(height: 32),
 
               // Already have an account? Login text button
               Center(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
                       AppStrings.authSwitchLogin.substring(
@@ -205,6 +159,66 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
               ),
               const SizedBox(height: 24),
+              // Signup Screen Or statement divider
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Expanded(
+                    child: Divider(
+                      thickness: 1.13,
+                      color: Colors.grey.shade400,
+                      indent: 6,
+                      // radius: BorderRadiusGeometry.all(Radius.elliptical(10, 10)),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 12),
+                    child: Text(
+                      AppStrings.signUpDividerText,
+                      style: GoogleFonts.inter(
+                        fontSize: 16,
+                        color: Colors.grey.shade500,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Divider(
+                      thickness: 1.13,
+                      color: Colors.grey.shade400,
+                      endIndent: 6,
+                      // radius: BorderRadiusGeometry.all(Radius.elliptical(10, 10)),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 24),
+
+              // Social Auth buttons
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Expanded(
+                    child: SocialAuthIcon(
+                      labelBtnText: AppStrings.socialIconGgleTxt,
+                      onTap: () => {},
+                      svgIcon: "assets/icons/google_svg.svg",
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: SocialAuthIcon(
+                      labelBtnText: AppStrings.socialIconApleTxt,
+                      onTap: () => {},
+                      svgIcon: "assets/icons/apple_svg.svg",
+                      // color: const Color(0xFFDB4437),
+                    ),
+                  ),
+                  // const SizedBox(width: 34),
+                ],
+              ),
             ],
           ),
         ),

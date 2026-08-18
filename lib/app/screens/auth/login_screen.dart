@@ -2,6 +2,7 @@ import 'package:crave_max_foodapp/app/routes/app_routes.dart';
 import 'package:crave_max_foodapp/app/screens/auth/widgets/social_icon.dart';
 import 'package:crave_max_foodapp/app/utils/app_strings.dart';
 import 'package:crave_max_foodapp/app/widgets/custom_elevated_button.dart';
+import 'package:crave_max_foodapp/app/widgets/custom_textform_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -26,6 +27,8 @@ class _LoginScreenState extends State<LoginScreen> {
             // crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               // const SizedBox(height: 100),
+
+              // App brand logo
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
@@ -44,7 +47,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               SizedBox(height: 28),
-              // Title
+
+              // Login Screen Title
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -76,7 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
               const SizedBox(height: 18),
 
-              // Sign up row
+              // Auth switch link to sign up screen statement row
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -109,106 +113,103 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 32),
 
               // Email field
-              TextFormField(
-                keyboardType: TextInputType.emailAddress,
-                style: GoogleFonts.inter(fontSize: 16),
-                decoration: InputDecoration(
-                  labelText: AppStrings.emailLabel,
-                  hintText: AppStrings.emailHintText,
-                  labelStyle: GoogleFonts.inter(color: Colors.grey[600]),
-                  hintStyle: GoogleFonts.inter(color: Colors.grey[400]),
-                  filled: true,
-                  fillColor: const Color(0xFFF7F8FA),
-                  contentPadding: const EdgeInsets.symmetric(
-                    horizontal: 20,
-                    vertical: 18,
-                  ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(16),
-                    borderSide: BorderSide.none,
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(16),
-                    borderSide: BorderSide(color: Colors.grey[300]!),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(16),
-                    borderSide: const BorderSide(
-                      color: Color(0xFF47D4A7),
-                      width: 1.5,
-                    ),
-                  ),
-                ),
+              CustomTextFormField(
+                fontSize: 16,
+                labelText: AppStrings.emailLabel,
+                hintText: AppStrings.emailHintText,
+                isEmailTxtField: true,
               ),
               const SizedBox(height: 20),
 
               // Password field
-              TextFormField(
-                obscureText: true,
-                style: GoogleFonts.inter(fontSize: 16),
-                decoration: InputDecoration(
-                  labelText: AppStrings.passwordLabel,
-                  hintText: AppStrings.passwordHintText,
-                  labelStyle: GoogleFonts.inter(color: Colors.grey[600]),
-                  hintStyle: GoogleFonts.inter(color: Colors.grey[400]),
-                  filled: true,
-                  fillColor: const Color(0xFFF7F8FA),
-                  contentPadding: const EdgeInsets.symmetric(
-                    horizontal: 20,
-                    vertical: 18,
-                  ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(16),
-                    borderSide: BorderSide.none,
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(16),
-                    borderSide: BorderSide(color: Colors.grey[300]!),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(16),
-                    borderSide: const BorderSide(
-                      color: Color(0xFF47D4A7),
-                      width: 1.5,
-                    ),
-                  ),
-                  suffixIcon: IconButton(
-                    icon: const Icon(
-                      Icons.visibility_off_outlined,
-                      color: Colors.grey,
-                    ),
-                    onPressed: () {},
-                  ),
-                ),
+              CustomTextFormField(
+                fontSize: 16,
+                labelText: AppStrings.passwordLabel,
+                hintText: AppStrings.passwordHintText,
+                isEmailTxtField: true,
               ),
               const SizedBox(height: 12),
 
               // Forgot password - shown as a subtle chip/button aligned to the end
-              Align(
-                alignment: Alignment.centerRight,
-                child: TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 4,
-                      vertical: 4,
-                    ),
-                    minimumSize: Size.zero,
-                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Checkbox(
+                        value: false,
+                        onChanged: (value) {},
+                        activeColor: Color(0xFF47D4A7),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                      ),
+                      Flexible(
+                        fit: FlexFit.loose,
+                        child: Text(
+                          AppStrings.rememberMeTxt,
+                          style: GoogleFonts.inter(
+                            fontSize: 16.5,
+                            color: Colors.grey[800],
+                          ),
+                        ),
+                      ),
+                      
+                    ],
                   ),
-                  child: Text(
-                    AppStrings.passwordRecoveryLinkTxt,
-                    style: GoogleFonts.inter(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xFF47D4A7),
-                      // decoration: TextDecoration.underline,
-                      decorationColor: Color(0xFF47D4A7),
+                  TextButton(
+                    onPressed: () {},
+                    style: TextButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 4,
+                        vertical: 4,
+                      ),
+                      minimumSize: Size.zero,
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    ),
+                    child: Text(
+                      AppStrings.passwordRecoveryLinkTxt,
+                      style: GoogleFonts.inter(
+                        fontSize: 16.5,
+                        fontWeight: FontWeight.w600,
+                        color: Color(0xFF47D4A7),
+                        // decoration: TextDecoration.underline,
+                        decorationColor: Color(0xFF47D4A7),
+                      ),
                     ),
                   ),
-                ),
+                ],
               ),
-              const SizedBox(height: 36),
+              // Align(
+              //   alignment: Alignment.centerRight,
+              //   child: TextButton(
+              //     onPressed: () {},
+              //     style: TextButton.styleFrom(
+              //       padding: const EdgeInsets.symmetric(
+              //         horizontal: 4,
+              //         vertical: 4,
+              //       ),
+              //       minimumSize: Size.zero,
+              //       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              //     ),
+              //     child: Text(
+              //       AppStrings.passwordRecoveryLinkTxt,
+              //       style: GoogleFonts.inter(
+              //         fontSize: 18,
+              //         fontWeight: FontWeight.w600,
+              //         color: Color(0xFF47D4A7),
+              //         // decoration: TextDecoration.underline,
+              //         decorationColor: Color(0xFF47D4A7),
+              //       ),
+              //     ),
+              //   ),
+              // ),
+              const SizedBox(height: 32),
 
               // Login button
               SizedBox(
@@ -222,32 +223,67 @@ class _LoginScreenState extends State<LoginScreen> {
                   onPress: () => Get.toNamed(AppRoutes.mainLayout),
                 ),
               ),
-              const SizedBox(height: 38),
+              const SizedBox(height: 32),
 
-              // Social login icons
+              // Login screen divier w/ or statement
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Expanded(
+                      child: Divider(
+                        thickness: 1.13,
+                        color: Colors.grey.shade400,
+                        indent: 6,
+                        // radius: BorderRadiusGeometry.all(Radius.elliptical(10, 10)),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 12),
+                      child: Text(
+                        AppStrings.loginDividerText,
+                        style: GoogleFonts.inter(
+                          fontSize: 16,
+                          color: Colors.grey.shade500,
+                          fontWeight: FontWeight.w500,
+                        )
+                      ),
+                    ),
+                    Expanded(
+                      child: Divider(
+                        thickness: 1.13,
+                        color: Colors.grey.shade400,
+                        endIndent: 6,
+                        // radius: BorderRadiusGeometry.all(Radius.elliptical(10, 10)),
+                      ),
+                    ),
+                    
+                  ],
+              ),
+              const SizedBox(height: 32),
+
+              // Social Auth buttons
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
                 children: [
-                  SocialAuthIcon(
-                    onTap: () => {},
-                    svgIcon: "assets/icons/insta_svg.svg", // placeholder for Instagram
-                    // color: const Color(0xFFE1306C),
+                  Expanded(
+                    child: SocialAuthIcon(
+                      labelBtnText: AppStrings.socialIconGgleTxt,
+                      onTap: () => {},
+                      svgIcon: "assets/icons/google_svg.svg",
+                    ),
                   ),
-                  const SizedBox(width: 34),
-                  SocialAuthIcon(
-                    onTap: () => {},
-                    svgIcon: "assets/icons/google_svg.svg", // placeholder for Google
-                    // color: const Color(0xFFDB4437),
-                  ),
-                  const SizedBox(width: 34),
-                  SocialAuthIcon(
-                    onTap: () => {},
-                    svgIcon: "assets/icons/facebook_svg.svg",
-                    // color: const Color(0xFF1877F2),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: SocialAuthIcon(
+                      labelBtnText: AppStrings.socialIconApleTxt,
+                      onTap: () => {},
+                      svgIcon: "assets/icons/apple_svg.svg",
+                    ),
                   ),
                 ],
               ),
-              const SizedBox(height: 24),
             ],
           ),
         ),
@@ -255,25 +291,3 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
-
-// Container(
-//   decoration: BoxDecoration(
-//     borderRadius: BorderRadius.circular(16),
-//     // border: Border.all(color: Colors.blue, width: 22),
-//   ),
-//   height: 150,
-//   width: 150,
-//   child: ClipRRect(
-//     borderRadius: BorderRadius.circular(14), // Slightly less than container to look clean
-//     child: SvgPicture.asset(
-//       'assets/icons/cravemax-app-logo.svg',
-//       fit: BoxFit.contain, // Fills the entire container
-//     ),
-//   ),
-// ),
-// SizedBox(height: 26),
-
-
-// class _SocialIconPlaceholder extends StatelessWidget {
-  
-// }

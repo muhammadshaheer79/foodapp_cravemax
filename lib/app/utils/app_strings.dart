@@ -12,7 +12,11 @@ class AppStrings {
   static const passwordLabel = "Password";
   static const passwordHintText = "Enter your password";
   static const passwordRecoveryLinkTxt = "Forgot password?";
+  static const rememberMeTxt = "Remember me";
   static const loginButtonText = "LOGIN";
+  static const loginDividerText = "Or Login with";
+  static const socialIconGgleTxt = "Google";
+  static const socialIconApleTxt = "Apple";
 
   // All unique non user-input text values in the Sign up screen:
   static const signupTitle = "Create account";
@@ -25,6 +29,7 @@ class AppStrings {
   static const tNcCheckboxLabel = "I agree to the terms and conditions";
   static const signupButtonText = "SIGN UP";
   static const authSwitchLogin = "Already have an account? Login";
+  static const signUpDividerText = "Or Sign up with";
 
   // All unique and non user-input text values in the main layout (Bottom tab bar):
   static const homeTabBarText = "Home";

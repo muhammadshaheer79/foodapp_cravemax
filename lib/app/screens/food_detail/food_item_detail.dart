@@ -66,8 +66,6 @@ class _FoodItemDetailState extends State<FoodItemDetail> {
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(65),
-                    // topRight: Radius.circular(260),
-                    // topRight: Radius.circular(0),
                   ),
                 ),
                 child: SafeArea(
@@ -352,8 +350,8 @@ class _FoodItemDetailState extends State<FoodItemDetail> {
                 child: SizedBox(
                   width: 360,
                   height: 360,
-                  child: Image.network(
-                    "assets/images/chicken-burger-transparent.png",
+                  child: Image.asset(
+                    foodItem.imagePath,
                     fit: BoxFit
                         .contain, // 🔧 not .cover — keeps full silhouette visible, no cropping
                   ),

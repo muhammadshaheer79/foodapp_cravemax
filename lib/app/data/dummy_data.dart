@@ -9,7 +9,8 @@ final List<FoodItem> demoFoodItems = [
     description:
         "Crispy, juicy chicken with fresh veggies and creamy sauce in a soft, toasted bun.",
     imageUrl:
-        "https://thumbs.dreamstime.com/b/highresolution-image-showcasing-crispy-chicken-sandwich-complete-mayonnaise-fresh-vegetables-sesame-bun-golden-breaded-457903015.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj7G_0ezt_qHVfK5viFTPYqwR5LJrxtwLpqWFtIAC-AA&s=10",
+    imagePath: "assets/images/chicken-burger-transparent.png",
     price: 25.00,
     rating: 4.5,
     totalReviews: 39,
@@ -32,6 +33,7 @@ final List<FoodItem> demoFoodItems = [
         "Juicy, seasoned beef with fresh veggies and rich sauce in a soft, toasted bun.",
     imageUrl:
         "https://t4.ftcdn.net/jpg/16/93/69/07/360_F_1693690769_AyElZH2ia3mWn5XpK6iIdHjuMiV9m2Sh.jpg",
+    imagePath: "assets/images/beef-burger-transparent.png",
     price: 30.00,
     rating: 4.5,
     totalReviews: 27,
@@ -54,6 +56,7 @@ final List<FoodItem> demoFoodItems = [
         "Fragrant fried rice tossed with tender chicken, fluffy egg, and colorful vegetables.",
     imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMBki8ElY58QAjvM7MPXtSTCtXJ1KQ7CZT8TFw9Oyeaw&s=10",
+    imagePath: "assets/images/chicken-fried-rice-transparent.png",
     price: 27.00,
     rating: 4.6,
     totalReviews: 44,
@@ -76,6 +79,7 @@ final List<FoodItem> demoFoodItems = [
         "Crispy chicken coated in a glossy, tangy Manchurian sauce with aromatic spices.",
     imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRymPeQCBXCvU7LUzQK7Lxu2A0HpSXB8e5445eFSU4hhw&s=10",
+    imagePath: "assets/images/chicken-manchurian-transparent.png",
     price: 32.00,
     rating: 4.7,
     totalReviews: 52,
@@ -98,6 +102,7 @@ final List<FoodItem> demoFoodItems = [
         "Crispy golden rolls filled with seasoned chicken and crunchy vegetables.",
     imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8WJfRjC-c6E-vUSFx0dB6ccqwswwkE-FL6UPEJzxZVA&s=10",
+    imagePath: "assets/images/chicken-spring-roll-transparent.png",
     price: 18.00,
     rating: 4.3,
     totalReviews: 24,
@@ -120,6 +125,7 @@ final List<FoodItem> demoFoodItems = [
         "Crispy fries smothered in creamy sauce, melted cheese, and savory toppings.",
     imageUrl:
         "https://t4.ftcdn.net/jpg/19/38/37/11/360_F_1938371162_v2DejAcmWcCEhe9gBRmnGkROSD32m4vW.jpg",
+    imagePath: "assets/images/loaded-fries-transparent.png",
     price: 26.00,
     rating: 4.6,
     totalReviews: 41,
@@ -141,6 +147,7 @@ final List<FoodItem> demoFoodItems = [
         "Silky pasta tossed with tender chicken in a rich, creamy and savory sauce.",
     imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6NmWHk2_u-7_ZCM8QqG5FwQepIaKC2NvRyUKceTQF1w&s=10",
+    imagePath: "assets/images/creamy-chicken-pasta-transparent.png",
     price: 35.00,
     rating: 4.7,
     totalReviews: 48,
@@ -163,6 +170,7 @@ final List<FoodItem> demoFoodItems = [
         "Fresh, crunchy greens topped with juicy grilled chicken and a light dressing.",
     imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT3NwJHoVYG9IhjJ4KmPzGdN67LUHblsQGoPayENcVRg&s=10",
+    imagePath: "assets/images/grilled-chicken-salad-transparent.png",
     price: 30.00,
     rating: 4.4,
     totalReviews: 22,
@@ -185,6 +193,7 @@ final List<FoodItem> demoFoodItems = [
         "Tender, bite-sized chicken pieces with a crispy golden coating kids love.",
     imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGDq57DAyPEWx4brslMMBifsAroXilv-H4Td2wdz0OXw&s=10",
+    imagePath: "assets/images/chicken-nuggets-transparent.png",
     price: 20.00,
     rating: 4.8,
     totalReviews: 57,
@@ -206,6 +215,7 @@ final List<FoodItem> demoFoodItems = [
         "Smooth, refreshing mango juice bursting with naturally sweet tropical flavor.",
     imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbHnoJ_482NNOWZfkaRMh-iEV36M67khCsg4rJfXVjGQ&s=10",
+    imagePath: "assets/images/mango-juice-transparent.png",
     price: 15.00,
     rating: 4.5,
     totalReviews: 33,
@@ -228,6 +238,7 @@ final List<FoodItem> demoFoodItems = [
         "Creamy vanilla ice cream drizzled with silky chocolate sauce and sweet toppings.",
     imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgiEKbzY0N65R_RsYUXLg9H9AGiK6HKC6KSuo2zBiFwA&s=10",
+    imagePath: "assets/images/chocolate-sundae-transparent.png",
     price: 22.00,
     rating: 4.7,
     totalReviews: 46,
@@ -250,6 +261,7 @@ final List<FoodItem> demoFoodItems = [
         "Juicy, tender beef steak seasoned with herbs and seared for a delicious crust.",
     imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbdVKAwseAdTDoo-dDjiL8b4mZqbCbajRbT9vYQ3HnSQ&s=10",
+    imagePath: "assets/images/beef-steak-transparent.png",
     price: 55.00,
     rating: 4.8,
     totalReviews: 61,
@@ -272,6 +284,7 @@ final List<FoodItem> demoFoodItems = [
         "Nutty quinoa paired with crisp vegetables and a light, refreshing dressing.",
     imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAOk5AbqCIlgZY6RIDtzkBpEST6L27Wnq8rX48i_pbyw&s=10",
+    imagePath: "assets/images/quinoa-vegbowl-transparent.png",
     price: 32.00,
     rating: 4.5,
     totalReviews: 19,
@@ -294,6 +307,7 @@ final List<FoodItem> demoFoodItems = [
         "Chilled, fizzy cola delivering a crisp, refreshing burst with every sip.",
     imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0v32WhXnYBeSI_Iqm0x4FGQzgS9i4OkLcBdr0KbkGAg&s=10",
+    imagePath: "assets/images/cold-drink-transparent.png",
     price: 10.00,
     rating: 4.3,
     totalReviews: 25,
@@ -315,7 +329,8 @@ final List<FoodItem> demoFoodItems = [
     description:
         "A soft mini bun filled with crispy chicken and creamy sauce in a kid-friendly size.",
     imageUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj7G_0ezt_qHVfK5viFTPYqwR5LJrxtwLpqWFtIAC-AA&s=10",
+        "https://thumbs.dreamstime.com/b/highresolution-image-showcasing-crispy-chicken-sandwich-complete-mayonnaise-fresh-vegetables-sesame-bun-golden-breaded-457903015.jpg",
+    imagePath: "assets/images/mini-chicken-burger-transparent.png",
     price: 18.00,
     rating: 4.7,
     totalReviews: 34,
@@ -338,6 +353,7 @@ final List<FoodItem> demoFoodItems = [
         "Golden, fluffy waffle topped with sweet cream and a drizzle of chocolate.",
     imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLV9Rkp43rDYL0UjpfgyWLCGEgJ1m1eS4nfPs6GQwBcw&s=10",
+    imagePath: "assets/images/belgian-waffle-transparent.png",
     price: 28.00,
     rating: 4.8,
     totalReviews: 53,
@@ -360,6 +376,7 @@ final List<FoodItem> demoFoodItems = [
         "Smooth, creamy strawberry ice cream bursting with sweet and fruity flavor.",
     imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzVxCsU65j2tLpqJx86A19uUPdm1_kZt_eOSAU_cZ7WA&s=10",
+    imagePath: "assets/images/strwberry-icecream-transparent.png",
     price: 16.00,
     rating: 4.5,
     totalReviews: 37,
@@ -382,6 +399,7 @@ final List<FoodItem> demoFoodItems = [
         "Bright and refreshing orange juice bursting with sweet, tangy citrus flavor.",
     imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhswrVdiFbQxhPzFaDHrtmDm1DLb0aoXEpVoJj7E8_0w&s=10",
+    imagePath: "assets/images/fresh-orange-juice-transparent.png",
     price: 14.00,
     rating: 4.5,
     totalReviews: 42,
@@ -404,6 +422,7 @@ final List<FoodItem> demoFoodItems = [
         "Flaky grilled fish seasoned with herbs for a light, fresh, protein-rich meal.",
     imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxE1K44E_xCf4-gVvC6YGnUUZy2kQ91LG0PmnQSD-wNg&s=10",
+    imagePath: "assets/images/grilled-fish-transparent.png",
     price: 42.00,
     rating: 4.6,
     totalReviews: 26,

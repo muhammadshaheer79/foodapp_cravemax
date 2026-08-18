@@ -1,6 +1,7 @@
 // import 'package:crave_max_foodapp/app/routes/app_routes.dart';
 // import 'package:crave_max_foodapp/app/utils/app_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 // import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -14,6 +15,9 @@ class CustomElevatedButton extends StatelessWidget {
   final double? iconSize;
   final Color? iconColor;
   final bool? isLogoutBtn;
+  final bool? hasGoogleSvgIcon;
+  final bool? hasAppleSvgIcon;
+  final String? svgIconPath;
 
   const CustomElevatedButton({
     super.key,
@@ -26,11 +30,20 @@ class CustomElevatedButton extends StatelessWidget {
     this.iconSize,
     this.iconColor,
     this.isLogoutBtn = false,
+    this.hasGoogleSvgIcon = false,
+    this.hasAppleSvgIcon = false,
+    this.svgIconPath,
   });
 
   @override
   Widget build(BuildContext context) {
-    if (iconName != null && iconSize != null && iconColor != null && isLogoutBtn == false) {
+    bool isGoogleSvgIcon = hasGoogleSvgIcon != false && svgIconPath != null;
+    bool isAppleSvgIcon = hasAppleSvgIcon != false && svgIconPath != null;
+
+    if (iconName != null &&
+        iconSize != null &&
+        iconColor != null &&
+        isLogoutBtn == false) {
       return ElevatedButton(
         onPressed: onPress,
         style: ElevatedButton.styleFrom(
@@ -65,14 +78,10 @@ class CustomElevatedButton extends StatelessWidget {
         onPressed: onPress,
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.white,
-          side: BorderSide(
-            color: color,
-            width: 2.0,
-          ),
+          side: BorderSide(color: color, width: 2.0),
           elevation: 0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
-            
           ),
         ),
         child: Row(
@@ -91,6 +100,68 @@ class CustomElevatedButton extends StatelessWidget {
               ),
             ),
           ],
+        ),
+      );
+    }
+
+    if (isGoogleSvgIcon == true) {
+      return ElevatedButton.icon(
+        onPressed: onPress,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.white,
+          side: BorderSide(color: Colors.grey.shade400, width: 1.25),
+          elevation: 0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
+        ),
+        icon: SvgPicture.asset(
+          svgIconPath!,
+          width: 24, // Control the size explicitly
+          height: 24,
+          // colorFilter: const ColorFilter.mode(
+          //   Colors.white,
+          //   BlendMode.srcIn,
+          // ), // Changes SVG color
+        ),
+        label: Text(
+          labelText,
+          style: GoogleFonts.inter(
+            fontSize: fontSize,
+            fontWeight: fontWeight,
+            color: color,
+          )
+        ),
+      );
+    }
+
+    if (isAppleSvgIcon == true) {
+      return ElevatedButton.icon(
+        onPressed: onPress,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.white,
+          side: BorderSide(color: Colors.grey.shade400, width: 1.25),
+          elevation: 0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
+        ),
+        icon: SvgPicture.asset(
+          svgIconPath!,
+          width: 24, // Control the size explicitly
+          height: 24,
+          // colorFilter: const ColorFilter.mode(
+          //   Colors.white,
+          //   BlendMode.srcIn,
+          // ), // Changes SVG color
+        ),
+        label: Text(
+          labelText,
+          style: GoogleFonts.inter(
+            fontSize: fontSize,
+            fontWeight: fontWeight,
+            color: color,
+          )
         ),
       );
     }
