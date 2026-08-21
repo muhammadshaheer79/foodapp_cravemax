@@ -3,7 +3,7 @@
 import 'package:crave_max_foodapp/app/routes/app_routes.dart';
 import 'package:crave_max_foodapp/app/routes/route_management.dart';
 // import 'package:crave_max_foodapp/signup_screen.dart';
-import 'package:crave_max_foodapp/app/utils/app_strings.dart';
+import 'package:crave_max_foodapp/app/core/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

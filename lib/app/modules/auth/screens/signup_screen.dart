@@ -1,24 +1,21 @@
+import 'package:crave_max_foodapp/app/modules/auth/controllers/signup_controller.dart';
 import 'package:crave_max_foodapp/app/routes/app_routes.dart';
-import 'package:crave_max_foodapp/app/screens/auth/widgets/social_icon.dart';
-import 'package:crave_max_foodapp/app/utils/app_strings.dart';
+import 'package:crave_max_foodapp/app/modules/auth/widgets/social_icon.dart';
+import 'package:crave_max_foodapp/app/core/utils/app_strings.dart';
 import 'package:crave_max_foodapp/app/widgets/custom_elevated_button.dart';
 import 'package:crave_max_foodapp/app/widgets/custom_textform_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({super.key});
+class SignupScreen extends GetView<SignupController> {
+  const SignupScreen({super.key});
 
-  @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
-}
-
-class _SignUpScreenState extends State<SignUpScreen> {
   static const Color primaryColor = Color(0xFF47D4A7);
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(

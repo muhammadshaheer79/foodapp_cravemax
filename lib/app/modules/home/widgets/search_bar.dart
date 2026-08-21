@@ -1,4 +1,4 @@
-import 'package:crave_max_foodapp/app/utils/app_strings.dart';
+import 'package:crave_max_foodapp/app/core/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

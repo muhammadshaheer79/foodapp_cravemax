@@ -1,10 +1,10 @@
 import 'package:crave_max_foodapp/app/data/dummy_data.dart';
 import 'package:crave_max_foodapp/app/data/models/food_item.dart';
 import 'package:crave_max_foodapp/app/routes/app_routes.dart';
-import 'package:crave_max_foodapp/app/screens/home/widgets/food_card.dart';
-import 'package:crave_max_foodapp/app/screens/home/widgets/food_list_item.dart';
-import 'package:crave_max_foodapp/app/screens/home/widgets/search_bar.dart';
-import 'package:crave_max_foodapp/app/utils/app_strings.dart';
+import 'package:crave_max_foodapp/app/modules/home/widgets/food_card.dart';
+import 'package:crave_max_foodapp/app/modules/home/widgets/food_list_item.dart';
+import 'package:crave_max_foodapp/app/modules/home/widgets/search_bar.dart';
+import 'package:crave_max_foodapp/app/core/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';

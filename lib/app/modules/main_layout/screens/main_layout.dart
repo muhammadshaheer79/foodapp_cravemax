@@ -1,10 +1,10 @@
-import 'package:crave_max_foodapp/app/controllers/main_layout_controller.dart';
-import 'package:crave_max_foodapp/app/screens/favorite/favorite_screen.dart';
+import 'package:crave_max_foodapp/app/modules/main_layout/controllers/main_layout_controller.dart';
+import 'package:crave_max_foodapp/app/modules/favorite/screens/favorite_screen.dart';
 // import 'package:crave_max_foodapp/app/screens/home/home_screen.dart';
-import 'package:crave_max_foodapp/app/screens/home/home_screen.dart';
-import 'package:crave_max_foodapp/app/screens/order/order_screen.dart';
-import 'package:crave_max_foodapp/app/screens/profile/profile_screen.dart';
-import 'package:crave_max_foodapp/app/utils/app_strings.dart';
+import 'package:crave_max_foodapp/app/modules/home/screens/home_screen.dart';
+import 'package:crave_max_foodapp/app/modules/order/screens/order_screen.dart';
+import 'package:crave_max_foodapp/app/modules/profile/screens/profile_screen.dart';
+import 'package:crave_max_foodapp/app/core/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';

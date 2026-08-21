@@ -1,6 +1,7 @@
+import 'package:crave_max_foodapp/app/modules/auth/controllers/login_controller.dart';
 import 'package:crave_max_foodapp/app/routes/app_routes.dart';
-import 'package:crave_max_foodapp/app/screens/auth/widgets/social_icon.dart';
-import 'package:crave_max_foodapp/app/utils/app_strings.dart';
+import 'package:crave_max_foodapp/app/modules/auth/widgets/social_icon.dart';
+import 'package:crave_max_foodapp/app/core/utils/app_strings.dart';
 import 'package:crave_max_foodapp/app/widgets/custom_elevated_button.dart';
 import 'package:crave_max_foodapp/app/widgets/custom_textform_field.dart';
 import 'package:flutter/material.dart';
@@ -8,14 +9,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends GetView<LoginController> {
   const LoginScreen({super.key});
 
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -185,30 +181,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ],
               ),
-              // Align(
-              //   alignment: Alignment.centerRight,
-              //   child: TextButton(
-              //     onPressed: () {},
-              //     style: TextButton.styleFrom(
-              //       padding: const EdgeInsets.symmetric(
-              //         horizontal: 4,
-              //         vertical: 4,
-              //       ),
-              //       minimumSize: Size.zero,
-              //       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-              //     ),
-              //     child: Text(
-              //       AppStrings.passwordRecoveryLinkTxt,
-              //       style: GoogleFonts.inter(
-              //         fontSize: 18,
-              //         fontWeight: FontWeight.w600,
-              //         color: Color(0xFF47D4A7),
-              //         // decoration: TextDecoration.underline,
-              //         decorationColor: Color(0xFF47D4A7),
-              //       ),
-              //     ),
-              //   ),
-              // ),
+              
               const SizedBox(height: 32),
 
               // Login button

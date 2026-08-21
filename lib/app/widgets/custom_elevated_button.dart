@@ -11,6 +11,7 @@ class CustomElevatedButton extends StatelessWidget {
   final double fontSize;
   final FontWeight fontWeight;
   final VoidCallback onPress;
+  final bool isLoading;
   final IconData? iconName;
   final double? iconSize;
   final Color? iconColor;
@@ -26,6 +27,7 @@ class CustomElevatedButton extends StatelessWidget {
     required this.fontSize,
     required this.fontWeight,
     required this.onPress,
+    this.isLoading = false,
     this.iconName,
     this.iconSize,
     this.iconColor,
@@ -45,7 +47,7 @@ class CustomElevatedButton extends StatelessWidget {
         iconColor != null &&
         isLogoutBtn == false) {
       return ElevatedButton(
-        onPressed: onPress,
+        onPressed: isLoading ? null : onPress,
         style: ElevatedButton.styleFrom(
           backgroundColor: color,
           elevation: 0,
@@ -53,7 +55,14 @@ class CustomElevatedButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(30),
           ),
         ),
-        child: Row(
+        child: isLoading ? const SizedBox(
+          height: 22,
+          width: 22,
+          child: CircularProgressIndicator(
+            strokeWidth: 2.4,
+            color: Colors.white,
+          )
+        ) : Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
@@ -75,7 +84,7 @@ class CustomElevatedButton extends StatelessWidget {
 
     if (isLogoutBtn == true) {
       return ElevatedButton(
-        onPressed: onPress,
+        onPressed: isLoading ? null : onPress,
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.white,
           side: BorderSide(color: color, width: 2.0),
@@ -84,7 +93,14 @@ class CustomElevatedButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(30),
           ),
         ),
-        child: Row(
+        child: isLoading ? SizedBox(
+          height: 22,
+          width: 22,
+          child: CircularProgressIndicator(
+            strokeWidth: 2.4,
+            color: color,
+          )
+        ) : Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
@@ -167,13 +183,20 @@ class CustomElevatedButton extends StatelessWidget {
     }
 
     return ElevatedButton(
-      onPressed: onPress,
+      onPressed: isLoading ? null : onPress,
       style: ElevatedButton.styleFrom(
         backgroundColor: color,
         elevation: 0,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
       ),
-      child: Text(
+      child: isLoading ? const SizedBox(
+        height: 22,
+        width: 22,
+        child: CircularProgressIndicator(
+          strokeWidth: 2.4,
+          color: Colors.white,
+        )
+      ) : Text(
         labelText,
         style: GoogleFonts.inter(
           fontSize: fontSize,
